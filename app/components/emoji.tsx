@@ -7,7 +7,7 @@ import EmojiPicker, {
 import { ModelType } from "../store";
 import BotIcon from "../icons/bot.svg";
 import BlackBotIcon from "../icons/black-bot.svg";
-import OasisIcon from "../icons/Oasis.svg";
+import OasisIcon from "../icons/oasis.svg";
 // import OasisIcon2 from "../icons/oasis.svg";
 
 export function getEmojiUrl(unified: string, style: EmojiStyle) {

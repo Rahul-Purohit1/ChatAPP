@@ -6,7 +6,7 @@ import {
 } from "../constant";
 import { getClientConfig } from "../config/client";
 import { createPersistStore } from "../utils/store";
-import ChatGptIcon from "../icons/Oasis.svg";
+import ChatGptIcon from "../icons/oasis.svg";
 
 import Locale from "../locales";
 import { use } from "react";
