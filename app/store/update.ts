@@ -7,6 +7,7 @@ import {
 import { getClientConfig } from "../config/client";
 import { createPersistStore } from "../utils/store";
 import ChatGptIcon from "../icons/Oasis.svg";
+
 import Locale from "../locales";
 import { use } from "react";
 import { useAppConfig } from ".";
