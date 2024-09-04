@@ -32,10 +32,6 @@ import {
 } from "@/app/utils";
 import { getServerSideConfig } from "../../config/server";
 const serverConfig = getServerSideConfig();
-console.log("here is serverConfig", serverConfig);
-// import { config } from "dotenv";
-// config();
-
 export interface OpenAIListModelResponse {
   object: string;
   data: Array<{
@@ -286,8 +282,8 @@ export class ChatGPTApi implements LLMApi {
                   let data = {
                     input: lastUserChat
                   }
-                  //console.log("backend url ",process.env.BACKEND_URL,serverConfig.BACKEND_URL);
                   const BACKEND_URL = serverConfig?.BACKEND_URL || "http://localhost:3005";
+                  console.log("localhost",BACKEND_URL);
                   const response = await fetch(`${BACKEND_URL}/langchain/invoke`, {
                     
                     method: 'POST',
@@ -338,15 +334,15 @@ export class ChatGPTApi implements LLMApi {
           openWhenHidden: true,
         });
       } else {
-        const res = await fetch(chatPath, chatPayload);
-        console.log("[OpenAI] Fetch Response:", res);
-        clearTimeout(requestTimeoutId);
+        // const res = await fetch(chatPath, chatPayload);
+        // console.log("[OpenAI] Fetch Response:", res);
+        // clearTimeout(requestTimeoutId);
          
-        const resJson = await res.json();
-        console.log("[OpenAI] JSON Response:", resJson);
-        const message = this.extractMessage(resJson);
-        console.log("[OpenAI] Final Message:", message);
-        options.onFinish(message);
+        // const resJson = await res.json();
+        // console.log("[OpenAI] JSON Response:", resJson);
+        // const message = this.extractMessage(resJson);
+        // console.log("[OpenAI] Final Message:", message);
+        // options.onFinish(message);
       }
       // animateResponseText();
     } catch (e) {
